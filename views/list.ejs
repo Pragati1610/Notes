@@ -9,9 +9,18 @@
 </head>
 
 <body>
-    <h1>Hello
-        <%= kindOfDay %>
-    </h1>
+
+    <% if(kindOfDay === "Weekday"){ %>
+        <h1 style="color: green;">
+            <%= kindOfDay %> list
+        </h1>
+        <%} else { %>
+            <h1 style="color: purple;">
+                <%= kindOfDay %> list
+            </h1>
+            <% } %>
+
+
 </body>
 
 </html>
