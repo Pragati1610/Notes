@@ -18,7 +18,18 @@
         <li>Buy food</li>
         <li>Cook food</li>
         <li>Eat food</li>
+
+        <% for(var i=0;i<newListItems.length;i++){ %>
+            <li>
+                <%= newListItems[i] %>
+            </li>
+            <% } %>
     </ul>
+
+    <form action="/" method="POST">
+        <input type="text" name="newItem">
+        <button type="submit" name="submit">Add</button>
+    </form>
 
 </body>
 
