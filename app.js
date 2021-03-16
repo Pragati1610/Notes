@@ -7,14 +7,17 @@ app.set('view engine', 'ejs');
 
 app.get('/', (req, res) => {
     var today = new Date();
-    let day;
-    if (today.getDay() === 6 || today.getDay() === 0) {
-        day = "Weekend";
-    } else {
-        day = "Weekday";
-    }
+    var options = {
+        weekday: "long",
+        day: "numeric",
+        month: "long"
+    };
+    let day = today.toLocaleDateString("en-US", options);
+
     res.render('list', { kindOfDay: day });
 });
+
+
 
 app.listen(3000, () => {
     console.log("server started");
